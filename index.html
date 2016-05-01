@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="weatherApp">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>AngularJS Weather Forecast SPA</title>
 
 	<!-- Load Bootstrap and fontawesome via CDN -->
-	<link rel="stylesheet" type="text/css" href="//ntdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 	<!-- Load AngularJS via CDN -->
-	<script type="text/javascript" src="//code.angularjs.org/1.5.5/angular.min.js"></script>
-	<script type="text/javascript" src="//code.angularjs.org/1.5.5/angular-route.min.js"></script>
-	<script type="text/javascript" src="//code.angularjs.org/1.5.5/angular-resource.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-resource.min.js"></script>
 
 	<!-- Load Application script files -->
 	<script type="text/javascript" src="app.js"></script>
@@ -30,7 +30,7 @@
 			</div>
 		</nav>
 	</header>
-	<div class="container">
+	<div class="container" ng-view>
 		
 	</div>
 </body>
