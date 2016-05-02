@@ -1,10 +1,14 @@
 //Controllers definition
-weatherApp.controller('homeCtrl', ['$scope', '$city', function ($scope, $city) {
+weatherApp.controller('homeCtrl', ['$scope', '$location', '$city', function ($scope, $location, $city) {
 	$scope.cityName = $city.cityName;
 
 	$scope.$watch('cityName', function () {
 		$city.cityName = $scope.cityName;
 	});
+
+	$scope.submit() = function () {
+		$location.path('/forecast');
+	};
 }]);
 
 weatherApp.controller('forecastCtrl', ['$scope', '$resource', '$routeParams', '$city', function ($scope, $resource, $routeParams, $city) {
