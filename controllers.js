@@ -11,14 +11,13 @@ weatherApp.controller('homeCtrl', ['$scope', '$location', '$city', function ($sc
 	};
 }]);
 
-weatherApp.controller('forecastCtrl', ['$scope', '$resource', '$routeParams', '$city', function ($scope, $resource, $routeParams, $city) {
+weatherApp.controller('forecastCtrl', ['$scope', '$routeParams', '$city', '$weatherData', function ($scope, $routeParams, $city, $weatherData) {
 	var appId = 'd7e06782f4458fccb0e3007d6587cc41';
 
 	$scope.cityName = $city.cityName;
 	$scope.days = $routeParams.days || '2';
 
-	$scope.weatherAPI = $resource('http://api.openweathermap.org/data/2.5/forecast/daily', {callback: 'JSON_CALLBACK'}, {get: {method: 'JSONP'}});
-	$scope.weatherResults = $scope.weatherAPI.get({ q: $scope.cityName, cnt: $scope.days, APPID: appId, units: 'metric' });
+	$scope.weatherResults = $weatherData.getData($scope.cityName, $scope.days, appId);
 
 	$scope.roundDegree = function (deg) {
 		return Math.round(deg);
