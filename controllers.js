@@ -6,7 +6,7 @@ weatherApp.controller('homeCtrl', ['$scope', '$location', '$city', function ($sc
 		$city.cityName = $scope.cityName;
 	});
 
-	$scope.submit() = function () {
+	$scope.submit = function () {
 		$location.path('/forecast');
 	};
 }]);
